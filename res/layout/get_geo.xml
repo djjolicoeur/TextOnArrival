@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TabHost android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	android:id="@+id/tabhost"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://millennialmedia.com/android/schema"
+>
+<LinearLayout
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/banlayout"
+    >
+<TextView
+android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/bgbanner"
+    android:height="50sp"
+    android:width="320sp"
+    android:background="@drawable/textonarrival320x50"
+    />
+    
+
+
+<TabWidget
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@android:id/tabs"
+    />
+<FrameLayout
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@android:id/tabcontent"
+     >
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab1"
+    android:orientation="vertical"
+    android:paddingTop="5sp"
+     >
+     
+     <ScrollView
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:id="@+id/tab1sv"
+     >
+     
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/tab1interior"
+    android:orientation="vertical"
+    android:paddingTop="5sp"
+     >
+    
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:paddingBottom="5sp"
+    android:text="Contact Info"
+    android:textSize="28sp"
+    android:textStyle="bold"
+    android:id="@+id/contactlabel" 
+    /> 
+    
+    <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:text="Enter a phone number or Choose from a list of your contacts."
+    android:id="@+id/desctext"
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:text="Phone Number"
+    android:textSize="24sp"
+    android:id="@+id/phonelabel"
+    />    
+    
+    <EditText
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:id="@+id/phonedata"
+    />
+    
+    <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/phonebutton"
+    android:text="Choose From Contacts"
+    android:paddingBottom="30sp"
+    />
+    
+    <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab1next"
+    android:text="Next"
+    />
+    
+    
+    <com.millennialmedia.android.MMAdView
+      android:id="@+id/mmadview" 
+      android:layout_width="fill_parent" 
+      android:layout_height="wrap_content"
+      android:paddingTop="70sp"
+      app:apid="45275"
+      app:adType="MMBannerAdTop"
+      app:refreshInterval="30"
+      app:accelerate="true"
+      app:width="320"
+      app:height="53"
+     />
+   
+    
+     </LinearLayout>
+     </ScrollView>
+     </LinearLayout>
+    
+     
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/tab2"
+    android:orientation="vertical"
+    android:paddingTop="5sp"
+     >
+     
+     <ScrollView
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:id="@+id/tab2sv"
+     >
+     
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/tab2interior"
+    android:orientation="vertical"
+    android:paddingTop="5sp"
+     >
+     
+     <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:paddingBottom="5sp"
+    android:text="Address Info"
+    android:textSize="28sp"
+    android:textStyle="bold"
+    android:id="@+id/addresslabel" 
+    /> 
+    
+     <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:text="Enter a location. Upon your arrival at this location a text message will be sent to the number you specified in the contact section (scroll down to fill in all fields)"
+    android:id="@+id/addrdesctext"
+    />
+    
+    <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/locationbutton"
+    android:text="Choose From Saved Locations"
+    android:paddingBottom="10sp"
+    />
+    
+    
+    <TextView  
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:text="Location Name"
+    android:textSize="24sp"
+    android:id="@+id/namelabel"
+    />    
+    
+    <EditText
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:id="@+id/namedata"
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:text="Street Address"
+    android:textSize="24sp"
+    android:id="@+id/salabel"
+    />    
+    
+    <EditText
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:id="@+id/sadata"
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:text="City, State"
+    android:textSize="24sp"
+    android:id="@+id/cslabel"
+    />    
+    
+    <EditText
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:id="@+id/csdata"
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:text="Zip Code"
+    android:textSize="24sp"
+    android:id="@+id/ziplabel"
+    />    
+    
+    <EditText
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:id="@+id/zipdata"
+    />
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"    
+    android:id="@+id/tab2nav">
+    
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab2back"
+    android:text="Back"
+    android:paddingLeft="40sp"
+    android:paddingRight="40sp"
+    />
+    
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab2next"
+    android:text="Next"
+    android:paddingLeft="40sp"
+    android:paddingRight="40sp"
+    />
+    
+    </LinearLayout>
+    
+    
+     </LinearLayout>
+   	 </ScrollView>
+     </LinearLayout>
+     
+     
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab3"
+    android:orientation="vertical"
+    android:paddingTop="5sp"
+     >
+     
+     <ScrollView
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:id="@+id/tab3sv"
+     >
+     
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/tab3interior"
+    android:orientation="vertical"
+    android:paddingTop="5sp"
+     >
+    
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:paddingBottom="5sp"
+    android:text="Text Message Body"
+    android:textSize="28sp"
+    android:textStyle="bold"
+    android:id="@+id/txtmsglabel" 
+    /> 
+    
+    <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10sp"
+    android:text="Enter the body of the text message to be sent.  If no message is specified, the default message will be sent"
+    android:id="@+id/txtdesctext"
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:text="Message Body"
+    android:textSize="24sp"
+    android:id="@+id/msgbodylabel"
+    />    
+    
+    <EditText
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:height="100sp"
+    android:paddingBottom="10sp"
+    android:id="@+id/msgbody"
+    />
+    
+     <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/submitbutton"
+    android:text="Submit"
+    android:paddingBottom="20sp"
+    />
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/tab3nav">
+    
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab3back"
+    android:text="Back"
+    android:paddingLeft="40sp"
+    android:paddingRight="40sp"
+    /> 
+    
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/currentbutton"
+    android:text="View Pending"
+    /> 
+    </LinearLayout>
+    
+    <com.millennialmedia.android.MMAdView
+      android:id="@+id/mmadviewtwo" 
+      android:layout_width="fill_parent" 
+      android:layout_height="wrap_content"
+      android:paddingTop="10sp"
+      app:apid="45275"
+      app:adType="MMBannerAdTop"
+      app:refreshInterval="30"
+      app:accelerate="true"
+      app:width="320"
+      app:height="53"
+     />
+    
+    
+   	 </LinearLayout>
+   	 </ScrollView>
+     </LinearLayout>
+     </FrameLayout>
+     </LinearLayout>
+    
+
+
+
+</TabHost>
