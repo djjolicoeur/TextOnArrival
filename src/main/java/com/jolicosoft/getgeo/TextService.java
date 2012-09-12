@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 //import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
+import main.java.com.jolicosoft.getgeo.R;
 
 public class TextService extends Service {
 	static final String TAG = "TOA-TextService";

@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -29,6 +29,7 @@ import android.widget.EditText;
 import android.widget.TabHost;
 //import android.widget.TextView;
 import android.widget.TabHost.TabSpec;
+import main.java.com.jolicosoft.getgeo.R;
 
 public class GetGeo extends Activity {
 	/** Called when the activity is first created. */

@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 import java.util.ArrayList;
 
@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableRow;
 import android.widget.TextView;
+import main.java.com.jolicosoft.getgeo.R;
 
 public class GetLocation extends Activity {
 		private AddressDBHelper db;

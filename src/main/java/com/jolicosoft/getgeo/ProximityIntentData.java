@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 //import android.app.PendingIntent;
 //import android.content.Intent;

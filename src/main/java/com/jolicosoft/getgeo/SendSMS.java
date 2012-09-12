@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 //import com.jolicosoft.getgeo.TextService.LocalBinder;
 
@@ -196,12 +196,13 @@ public class SendSMS extends Activity {
 			SendSMS.this.finish();
 
 		}
-
+                
+                /*
 		@Override
 		public void MMAdRequestIsCaching(MMAdView arg0) {
 			// TODO Auto-generated method stub
 
-		}
+		}*/
 
 		@Override
 		public void MMAdReturned(MMAdView arg0) {
