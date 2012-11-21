@@ -1,4 +1,4 @@
-package main.java.com.jolicosoft.getgeo;
+package com.jolicosoft.getgeo;
 
 //import com.jolicosoft.getgeo.TextService.LocalBinder;
 
@@ -171,11 +171,11 @@ public class SendSMS extends Activity {
 
 	public class AdListener implements MMAdListener {
 
-		@Override
-		public void MMAdClickedToNewBrowser(MMAdView arg0) {
+		//@Override
+		//public void MMAdClickedToNewBrowser(MMAdView arg0) {
 			// TODO Auto-generated method stub
 
-		}
+		//}
 
 		@Override
 		public void MMAdClickedToOverlay(MMAdView arg0) {
@@ -209,6 +209,16 @@ public class SendSMS extends Activity {
 			// TODO Auto-generated method stub
 
 		}
+
+        @Override
+        public void MMAdRequestIsCaching(MMAdView mmav) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public void MMAdCachingCompleted(MMAdView mmav, boolean bln) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
 
 	}
 

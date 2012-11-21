@@ -1,4 +1,4 @@
-package main.java.com.jolicosoft.getgeo;
+package com.jolicosoft.getgeo;
 import java.lang.ref.WeakReference;
 //import com.jolicosoft.getgeo.TextService.LocalBinder;
 

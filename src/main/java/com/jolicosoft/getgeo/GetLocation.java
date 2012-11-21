@@ -1,4 +1,4 @@
-package main.java.com.jolicosoft.getgeo;
+package com.jolicosoft.getgeo;
 
 import java.util.ArrayList;
 

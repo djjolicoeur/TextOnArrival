@@ -10,7 +10,7 @@
 
     <properties>
         <platform.version> 2.3.3
-            </platform.version>
+        </platform.version>
     </properties>
 
 
@@ -21,6 +21,12 @@
             <version>${platform.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency> 
+            <groupId>com.millennialmedia.android</groupId> 
+            <artifactId>mmadview</artifactId> 
+            <version>4.6.0</version> 
+            <scope>compile</scope> 
+        </dependency> 
     </dependencies>
 
     <build>
@@ -37,7 +43,7 @@
                     <sdk>
                         <platform>10</platform>
                     </sdk>
-                                        <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
                 </configuration>
                 <extensions>true</extensions>
             </plugin>
@@ -50,28 +56,28 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-						<plugin>
-    					<groupId>com.googlecode.addjars-maven-plugin</groupId>
-    					<artifactId>addjars-maven-plugin</artifactId>
-    					<version>1.0.2</version>
-    					<executions>
-        				<execution>
-            				<goals>
-                			<goal>add-jars</goal>
-            				</goals>
-            				<configuration>
-                			<resources>
-                    		<resource>
-                        	<directory>${project.basedir}</directory>
-                        	<includes>
-                            	<include>MMAdView.jar</include>
-                        	</includes>
-                    	</resource>
-                		</resources>
-            			</configuration>
-        				</execution>
-    				</executions>
-					</plugin>
+          <!--  <plugin>
+                <groupId>com.googlecode.addjars-maven-plugin</groupId>
+                <artifactId>addjars-maven-plugin</artifactId>
+                <version>1.0.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>add-jars</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}</directory>
+                                    <includes>
+                                        <include>MMAdView.jar</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin> -->
         </plugins>
     </build>
 </project>
