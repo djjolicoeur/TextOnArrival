@@ -13,14 +13,14 @@
     android:orientation="vertical"
     android:id="@+id/banlayout"
     >
-<TextView
+<!--<TextView
 android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/bgbanner"
     android:height="50sp"
     android:width="320sp"
     android:background="@drawable/textonarrival320x50"
-    />
+    /> -->
     
 
 

@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -139,7 +139,7 @@ public class GetGeo extends Activity {
 
 		final TabHost tabHost = (TabHost) findViewById(R.id.tabhost);
 		tabHost.setup();
-		tabHost.setBackgroundColor(Color.argb(255, 75, 96, 122));
+		//tabHost.setBackgroundColor(Color.argb(255, 75, 96, 122));
 
 		TabSpec spec1 = tabHost.newTabSpec("Tab 1");
 
