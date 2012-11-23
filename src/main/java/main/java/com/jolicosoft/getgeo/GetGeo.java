@@ -144,14 +144,14 @@ public class GetGeo extends Activity {
 		TabSpec spec1 = tabHost.newTabSpec("Tab 1");
 
 		spec1.setContent(R.id.tab1);
-		spec1.setIndicator("Contact (req)");
+		spec1.setIndicator("Contact (req)", getResources().getDrawable(R.drawable.ic_menu_friendslist));
 
 		TabSpec spec2 = tabHost.newTabSpec("Tab 2");
 		spec2.setContent(R.id.tab2);
-		spec2.setIndicator("Address (req)");
+		spec2.setIndicator("Address (req)",getResources().getDrawable(R.drawable.ic_menu_mylocation) );
 
 		TabSpec spec3 = tabHost.newTabSpec("Tab 3");
-		spec3.setIndicator("Message/Submit");
+		spec3.setIndicator("Message/Submit", getResources().getDrawable(R.drawable.ic_menu_send));
 		spec3.setContent(R.id.tab3);
 
 		tabHost.addTab(spec1);

@@ -3,7 +3,7 @@
       package="main.java.com.jolicosoft.getgeo"
       android:versionCode="1"
       android:versionName="1.0">
-      <uses-sdk android:minSdkVersion="8" />
+      <uses-sdk android:minSdkVersion="8"  android:targetSdkVersion="15" />
       <uses-permission android:name="android.permission.INTERNET"/>
       <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
       <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -42,12 +42,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".CurrentAlerts"
-                  android:label="@string/app_name">
+                  android:label="@string/app_name"
+                  android:theme="@style/TOATheme">
             <intent-filter>
                 <action android:name="android.intent.action.RUN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.millennialmedia.android.MMAdViewOverlayActivity" 
+        <activity android:name="com.millennialmedia.android.MMActivity" 
       		android:theme="@android:style/Theme.Translucent.NoTitleBar">
 		</activity>
 		<activity android:name="com.millennialmedia.android.VideoPlayer" 
