@@ -51,7 +51,6 @@ public class GetLocation extends Activity {
         
         
         ScrollView sv = new ScrollView(this);
-        sv.setBackgroundColor(Color.argb(255,75,96,122));
         LinearLayout ll = new LinearLayout(this);
         LayoutParams rulerParams = new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT);
         rulerParams.height = 2;
@@ -72,7 +71,7 @@ public class GetLocation extends Activity {
         	TableRow tr = new TableRow(this);
         	TextView tv = new TextView(this);
         	tv.setText(info);
-        	tv.setBackgroundColor(Color.argb(255,75,96,122));
+        	//tv.setBackgroundColor(Color.argb(255,75,96,122));
         	tr.addView(tv);
         	ll.addView(tr);
         	View ruler = new View(this);
@@ -141,11 +140,13 @@ public class GetLocation extends Activity {
     	builder.setMessage("Delete Saved Address?.")
            .setCancelable(false)
            .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+               @Override
                public void onClick(DialogInterface dialog, int id) {
                     db.deleteAddr(addr);
                }
            })
            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+               @Override
                public void onClick(DialogInterface dialog, int id) {
                     dialog.cancel();
                }

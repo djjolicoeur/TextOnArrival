@@ -197,6 +197,15 @@ android:layout_width="fill_parent"
     android:drawableLeft="@drawable/ic_menu_myplaces"
     />
     
+    <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/maplocationbutton"
+    android:text="Choose From Map"
+    android:paddingBottom="10sp"
+    android:drawableLeft="@drawable/ic_menu_mapmode"
+    />
+    
     
     <TextView  
     android:layout_width="fill_parent"

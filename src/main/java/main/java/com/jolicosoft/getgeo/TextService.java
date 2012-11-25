@@ -284,7 +284,7 @@ public class TextService extends Service {
 		return list;
 	}
 
-	private Location getCurrentLocation() {
+	public Location getCurrentLocation() {
 		Location current = locMan.getLastKnownLocation(provider);
 		return current;
 	}
@@ -317,7 +317,14 @@ public class TextService extends Service {
 				sendText.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				sendText.putExtras(pid.getBundle());
 				startActivity(sendText);
-				proxSessions.remove(pid);
+				boolean wasDeleted = proxSessions.remove(pid);
+                                if(wasDeleted){
+                                    Log.d(TAG, "[!!] " + pid.proximityGci.getAddr() + " WAS DELETED[!!]");
+                                }else{
+                                    Log.d(TAG, "[!!] " + pid.proximityGci.getAddr() + " WAS NOT DELETED[!!]");
+                                }
+                          
+                                
 			}
 		}
 
