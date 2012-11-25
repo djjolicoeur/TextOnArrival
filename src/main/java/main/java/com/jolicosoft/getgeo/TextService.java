@@ -21,6 +21,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.telephony.SmsManager;
 import android.util.Log;
 import main.java.com.jolicosoft.getgeo.R;
 
@@ -48,6 +49,7 @@ public class TextService extends Service {
 	static ArrayList<ProximityIntentData> proxSessions = null;
 	private final IBinder sBinder = new LocalBinder<TextService>(this);
 	private TOALocationListener listener = null;
+        private boolean isProcessing = false;
 
 	Timer timer = new Timer();
 	final Handler handler = new Handler();
@@ -300,7 +302,12 @@ public class TextService extends Service {
 	}
 
 	private synchronized void onLocationChangedOperation(Location current) {
-
+                if(isProcessing){
+                    Log.d(TAG, "[!!]Not Processing Concurrent Location Change Request. Already Processing[!!]");
+                    return;
+                }
+                
+                isProcessing  = true;
 		ArrayList<ProximityIntentData> copy = copyProxList();
 
 		for (ProximityIntentData pid : copy) {
@@ -313,22 +320,45 @@ public class TextService extends Service {
 			float dist = current.distanceTo(dest);
 			pid.getGci().setDistance(dist);
 			if (dist <= RADIUS) {
-				Intent sendText = new Intent(TextService.this, SendSMS.class);
-				sendText.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				sendText.putExtras(pid.getBundle());
-				startActivity(sendText);
 				boolean wasDeleted = proxSessions.remove(pid);
                                 if(wasDeleted){
                                     Log.d(TAG, "[!!] " + pid.proximityGci.getAddr() + " WAS DELETED[!!]");
                                 }else{
                                     Log.d(TAG, "[!!] " + pid.proximityGci.getAddr() + " WAS NOT DELETED[!!]");
                                 }
-                          
+                                sendSMS(pid.getGci());
+                                Intent sendText = new Intent(TextService.this, SendSMS.class);
+				sendText.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				sendText.putExtras(pid.getBundle());
+				startActivity(sendText);
                                 
 			}
 		}
-
+              isProcessing = false;  
 	}
+        
+        private void sendSMS(GeoContactInfo gci){
+            String phoneNumber = gci.getPhoneNum();
+            String addrLine1 = gci.getAddr();
+            String msgBdy = gci.getMessage();
+            Double latDub = gci.getLat();
+            Double lonDub = gci.getLon();
+            if ((!phoneNumber.equals("")) && (!addrLine1.equals(""))) {
+			SmsManager sm = SmsManager.getDefault();
+			String message = "";
+			if (msgBdy.equals("")) {
+				message = "I have Arrived at " + addrLine1;
+			} else {
+				message = msgBdy;
+			}
+
+			message = message
+					+ "\n\nHere's a Google map of where I am:\nhttp://maps.google.com/maps?q="
+					+ latDub + "," + lonDub + "\n\nSent using TextOnArrival";
+
+			sm.sendTextMessage(phoneNumber, null, message, null, null);
+		}
+        }
 
 	class TOALocationListener implements LocationListener {
 
