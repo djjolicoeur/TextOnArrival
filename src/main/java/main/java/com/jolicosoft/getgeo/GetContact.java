@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 import java.util.ArrayList;
 
@@ -69,7 +69,7 @@ public class GetContact extends Activity {
     			TextView tv = new TextView(this);
     			tv.setClickable(true);
     			tv.setTextSize(30);
-    			tv.setBackgroundColor(Color.argb(255,75,96,122));
+    			//tv.setBackgroundColor(Color.argb(255,75,96,122));
     			tv.setText(contact.getName());
     			tr.addView(tv);
     			ll.addView(tr);

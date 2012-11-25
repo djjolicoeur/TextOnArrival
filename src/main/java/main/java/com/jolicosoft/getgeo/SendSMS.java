@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 //import com.jolicosoft.getgeo.TextService.LocalBinder;
 
@@ -124,7 +124,7 @@ public class SendSMS extends Activity {
 		ll.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
 				LayoutParams.FILL_PARENT));
 		ll.setOrientation(LinearLayout.VERTICAL);
-		ll.setBackgroundColor(Color.argb(255, 75, 96, 122));
+		//ll.setBackgroundColor(Color.argb(255, 75, 96, 122));
 		TextView message = new TextView(this);
 		message.setPadding(1, 100, 1, 100);
 		message.setTextSize(24);

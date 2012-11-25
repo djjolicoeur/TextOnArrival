@@ -13,14 +13,14 @@
     android:orientation="vertical"
     android:id="@+id/banlayout"
     >
-<TextView
+<!--<TextView
 android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/bgbanner"
     android:height="50sp"
     android:width="320sp"
     android:background="@drawable/textonarrival320x50"
-    />
+    /> -->
     
 
 
@@ -34,13 +34,20 @@ android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@android:id/tabcontent"
      >
+    <!--<LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab1"
+    android:orientation="vertical"
+    android:paddingTop="2sp" 
+     > -->
      <LinearLayout
      android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/tab1"
     android:orientation="vertical"
-    android:paddingTop="5sp"
-     >
+     
+     > 
      
      <ScrollView
      android:layout_width="fill_parent"
@@ -89,18 +96,27 @@ android:layout_width="fill_parent"
     android:id="@+id/phonedata"
     />
     
-    <Button
+   <!-- <Button
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/phonebutton"
     android:text="Choose From Contacts"
     android:paddingBottom="30sp"
+    /> -->
+    
+    <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/phonebutton"
+    android:drawableLeft="@drawable/ic_menu_friendslist"
+    android:text="Choose From Contacts"
     />
     
     <Button
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/tab1next"
+    android:drawableRight="@drawable/ic_menu_forward"
     android:text="Next"
     />
     
@@ -124,12 +140,20 @@ android:layout_width="fill_parent"
      </LinearLayout>
     
      
-     <LinearLayout
+   <!--  <LinearLayout
      android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/tab2"
     android:orientation="vertical"
     android:paddingTop="5sp"
+     > -->
+         
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/tab2"
+    android:orientation="vertical"
+    
      >
      
      <ScrollView
@@ -170,6 +194,16 @@ android:layout_width="fill_parent"
     android:id="@+id/locationbutton"
     android:text="Choose From Saved Locations"
     android:paddingBottom="10sp"
+    android:drawableLeft="@drawable/ic_menu_myplaces"
+    />
+    
+    <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/maplocationbutton"
+    android:text="Choose From Map"
+    android:paddingBottom="10sp"
+    android:drawableLeft="@drawable/ic_menu_mapmode"
     />
     
     
@@ -246,6 +280,7 @@ android:layout_width="fill_parent"
     android:text="Back"
     android:paddingLeft="40sp"
     android:paddingRight="40sp"
+    android:drawableLeft="@drawable/ic_menu_back"
     />
     
     <Button
@@ -255,6 +290,7 @@ android:layout_width="fill_parent"
     android:text="Next"
     android:paddingLeft="40sp"
     android:paddingRight="40sp"
+    android:drawableRight="@drawable/ic_menu_forward"
     />
     
     </LinearLayout>
@@ -265,12 +301,20 @@ android:layout_width="fill_parent"
      </LinearLayout>
      
      
-     <LinearLayout
+   <!--  <LinearLayout
      android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/tab3"
     android:orientation="vertical"
     android:paddingTop="5sp"
+     > -->
+         
+     <LinearLayout
+     android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tab3"
+    android:orientation="vertical"
+    
      >
      
      <ScrollView
@@ -327,6 +371,7 @@ android:layout_width="fill_parent"
     android:id="@+id/submitbutton"
     android:text="Submit"
     android:paddingBottom="20sp"
+    android:drawableLeft="@drawable/ic_menu_send"
     />
     <LinearLayout
     android:orientation="horizontal"
@@ -342,6 +387,7 @@ android:layout_width="fill_parent"
     android:text="Back"
     android:paddingLeft="40sp"
     android:paddingRight="40sp"
+    android:drawableLeft="@drawable/ic_menu_back"
     /> 
     
     <Button
@@ -349,6 +395,7 @@ android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:id="@+id/currentbutton"
     android:text="View Pending"
+    android:drawableRight="@drawable/ic_menu_recent_history"
     /> 
     </LinearLayout>
     

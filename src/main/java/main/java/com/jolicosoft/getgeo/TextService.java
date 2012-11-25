@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 //import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
@@ -26,8 +26,8 @@ import main.java.com.jolicosoft.getgeo.R;
 
 public class TextService extends Service {
 	static final String TAG = "TOA-TextService";
-	static final String ACTION_FOREGROUND = "com.jolicosoft.geteo.TextService.FOREGROUND";
-	static final String ACTION_BACKGROUND = "com.jolicosoft.geteo.TextService.BACKGROUND";
+	static final String ACTION_FOREGROUND = "main.java.com.jolicosoft.geteo.TextService.FOREGROUND";
+	static final String ACTION_BACKGROUND = "main.java.com.jolicosoft.geteo.TextService.BACKGROUND";
 	static final float RADIUS = 150.0f;
 
 	private static final Class<?>[] mSetForegroundSignature = new Class[] { boolean.class };
@@ -284,7 +284,7 @@ public class TextService extends Service {
 		return list;
 	}
 
-	private Location getCurrentLocation() {
+	public Location getCurrentLocation() {
 		Location current = locMan.getLastKnownLocation(provider);
 		return current;
 	}
@@ -317,7 +317,14 @@ public class TextService extends Service {
 				sendText.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				sendText.putExtras(pid.getBundle());
 				startActivity(sendText);
-				proxSessions.remove(pid);
+				boolean wasDeleted = proxSessions.remove(pid);
+                                if(wasDeleted){
+                                    Log.d(TAG, "[!!] " + pid.proximityGci.getAddr() + " WAS DELETED[!!]");
+                                }else{
+                                    Log.d(TAG, "[!!] " + pid.proximityGci.getAddr() + " WAS NOT DELETED[!!]");
+                                }
+                          
+                                
 			}
 		}
 
