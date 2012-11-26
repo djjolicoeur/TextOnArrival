@@ -1,4 +1,4 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 import java.util.ArrayList;
 
@@ -60,7 +60,7 @@ public class CurrentAlerts extends Activity {
 					tv.setTextSize(18);
 					tv.setText(info);
 					tv.setClickable(true);
-					tv.setBackgroundColor(Color.argb(255, 75, 96, 122));
+					//tv.setBackgroundColor(Color.argb(255, 75, 96, 122));
 					tr.addView(tv);
 					ll2.addView(tr);
 					View ruler = new View(CurrentAlerts.this);
@@ -143,7 +143,7 @@ public class CurrentAlerts extends Activity {
 		directions.setText("Long Click To Remove");
 		ll2.addView(directions);
 		sv = new ScrollView(this);
-		sv.setBackgroundColor(Color.argb(255, 75, 96, 122));
+		//sv.setBackgroundColor(Color.argb(255, 75, 96, 122));
 		pd = ProgressDialog
 				.show(CurrentAlerts.this, "", "Loading, Stand by...");
 		pd.show();

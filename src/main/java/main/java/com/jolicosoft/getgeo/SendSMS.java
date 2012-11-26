@@ -1,9 +1,6 @@
-package com.jolicosoft.getgeo;
+package main.java.com.jolicosoft.getgeo;
 
 //import com.jolicosoft.getgeo.TextService.LocalBinder;
-
-import com.millennialmedia.android.MMAdView;
-import com.millennialmedia.android.MMAdView.MMAdListener;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -11,16 +8,16 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.millennialmedia.android.MMAdView;
+import com.millennialmedia.android.MMAdView.MMAdListener;
 
 public class SendSMS extends Activity {
 	TextService ts;
@@ -28,6 +25,8 @@ public class SendSMS extends Activity {
 	boolean isBound = false;
 	boolean deletedGci = false;
 	GeoContactInfo gci = null;
+        
+        
 
 	private ServiceConnection tsConnection = new ServiceConnection() {
 
@@ -38,7 +37,7 @@ public class SendSMS extends Activity {
 			// LocalService instance
 			// LocalBinder binder = (LocalBinder) service;
 			ts = ((LocalBinder<TextService>) service).getService();
-			// ts = binder.getService();
+			
 			isBound = true;
 			Log.d("NOTIFY: ", "SendSMS is Bound");
 		}
@@ -54,10 +53,7 @@ public class SendSMS extends Activity {
 		super.onStop();
 		// Unbind from the service
 		if (isBound) {
-			/*
-			 * if(! deletedGci){ ts.stopProximityMonitor(gci); deletedGci =
-			 * true; }
-			 */
+			
 			ts.killIfEmpty();
 			unbindService(tsConnection);
 			isBound = false;
@@ -89,43 +85,14 @@ public class SendSMS extends Activity {
 			lonDub = extras.getDouble("lon");
 			gci = new GeoContactInfo(phoneNumber, addrLine1, msgBdy);
 		}
-		// gci = new GeoContactInfo(userName,phoneNumber,addrLine1);
-
-		Log.d("SendSMS msgBdy:", msgBdy);
-		Log.d("SendSMS phoneNumber: ", phoneNumber);
-		Log.d("SendSMS Addr: ", addrLine1);
-		if ((!phoneNumber.equals("")) && (!addrLine1.equals(""))) {
-			SmsManager sm = SmsManager.getDefault();
-			String message = "";
-			if (msgBdy.equals("")) {
-				message = "I have Arrived at " + addrLine1;
-			} else {
-				message = msgBdy;
-			}
-
-			message = message
-					+ "\n\nHere's a Google map of where I am:\nhttp://maps.google.com/maps?q="
-					+ latDub + "," + lonDub + "\n\nSent using TextOnArrival";
-
-			sm.sendTextMessage(phoneNumber, null, message, null, null);
-		}
-
-		// GeoContactInfo gci = new
-		// GeoContactInfo(userName,phoneNumber,addrLine1);
-		Log.d("NOTIFY: ", "SendSMS checking for Service");
-		if (isBound && gci != null) {
-			Log.d("NOTIFY", "SendSMS found service");
-			// Log.d("NOTIFY: ", "Removing Proximity Monitor");
-			// ts.stopProximityMonitor(gci);
-			// deletedGci = true;
-		}
-
+		
+		
 		LinearLayout ll = new LinearLayout(this);
 		ll.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
 				LayoutParams.FILL_PARENT));
 		ll.setOrientation(LinearLayout.VERTICAL);
-		ll.setBackgroundColor(Color.argb(255, 75, 96, 122));
-		TextView message = new TextView(this);
+		
+                TextView message = new TextView(this);
 		message.setPadding(1, 100, 1, 100);
 		message.setTextSize(24);
 		message.setText("A message has been sent to: " + phoneNumber
@@ -137,6 +104,7 @@ public class SendSMS extends Activity {
 		adview.setId(20);
 		AdListener al = new AdListener();
 		adview.setListener(al);
+                adview.fetch();
 
 		Button button = new Button(this);
 		button.setText("OK");
@@ -144,19 +112,7 @@ public class SendSMS extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				if (isBound) {
-					Log.d("SMS BUTTON", "IS BOUND");
-					if (!deletedGci) {
-						Log.d("SMS BUTTON", "Calling StopProximityMonitor");
-						// ts.stopProximityMonitor(gci);
-						// deletedGci = true;
-					}
-					Log.d("SMS BUTTON", "Unbinding Service");
-					unbindService(tsConnection);
-					isBound = false;
-				}
-				// TODO Auto-generated method stub
-				adview.callForAd();
+				adview.display();
 				pd = ProgressDialog.show((Activity) SendSMS.this, "",
 						"Please wait for a word from our sponsers...", true);
 
@@ -165,7 +121,7 @@ public class SendSMS extends Activity {
 
 		ll.addView(button);
 		setContentView(ll);
-		// this.finish();
+		
 
 	}
 
