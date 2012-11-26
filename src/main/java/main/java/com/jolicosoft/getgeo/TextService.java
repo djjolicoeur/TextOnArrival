@@ -354,7 +354,7 @@ public class TextService extends Service {
 
 			message = message
 					+ "\n\nHere's a Google map of where I am:\nhttp://maps.google.com/maps?q="
-					+ latDub + "," + lonDub + "\n\nSent using TextOnArrival";
+					+ latDub + "," + lonDub + "\n\nSent using TextOnArrival for Android";
 
 			sm.sendTextMessage(phoneNumber, null, message, null, null);
 		}
